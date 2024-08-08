@@ -1,0 +1,70 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  .modalContent {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        margin-bottom: 0;
+      }
+      .closeBtn {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+    }
+    .modalBody {
+      margin: 0 0.5rem 1.5rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+      .modalField {
+        margin: 1rem 0 1rem 10%;
+        display: flex;
+        flex-direction: column;
+        max-width: 75%;
+        .label {
+          font-weight: 700;
+        }
+        .error {
+          color: #9b0909;
+        }
+      }
+      .modalBtns {
+        display: flex;
+        justify-content: end;
+        margin-top: 1rem;
+        border: none;
+        .buttons {
+          border: none;
+          border-radius: 1.25rem;
+          color: white;
+          font-weight: bold;
+          padding: 0.75rem;
+          font-size: 0.875rem;
+          cursor: pointer;
+        }
+        .cancelBtn {
+          background-color: #6a1f33;
+          margin-right: 2rem;
+        }
+        .acceptBtn {
+          background-color: #16521c;
+        }
+      }
+    }
+  }
+}
