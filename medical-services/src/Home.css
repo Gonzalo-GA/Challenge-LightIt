@@ -26,4 +26,15 @@
       }
     }
   }
+  .cardsWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 601px){
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 1rem;
+      justify-items: center;
+    }
+  }
 }

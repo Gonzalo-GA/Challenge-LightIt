@@ -37,7 +37,13 @@ function Home() {
             Add Patient
           </button>
         </div>
-        {fetching ? getFetching() : <PatientsList />}
+        {fetching ? (
+          getFetching()
+        ) : (
+          <div className="cardsWrapper">
+            <PatientsList />
+          </div>
+        )}
         {/* TODO: Si se puede hacer pantalla de error mejor
           EL TAL JHON DOE OJITO CON VALIDACIONES */}
         <Modal />

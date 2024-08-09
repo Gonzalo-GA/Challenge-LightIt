@@ -19,12 +19,19 @@ function PatientsList() {
     <React.Fragment>
       {patientsList.map((patient: Patient) => {
         return (
-          <div className="patientCard" key={patient.id}>
-            <div
-              className={`patientData ${
-                patient.showDetails ? "showingDetails" : ""
-              }`}
+          <div
+            className={`patientCard ${
+              patient.showDetails ? "showingDetails" : ""
+            }`}
+            key={patient.id}
+          >
+            <button
+              className="btnIcon"
+              onClick={() => handleShowModalEdit(patient.id)}
             >
+              <img className="edit" src="/edit.png" alt="edit" />
+            </button>
+            <div className="patientData">
               <div className="patientShortData">
                 <img className="avatar" src={patient.avatar} alt="avatar" />
                 {getData("Name", patient.name, false)}
@@ -32,7 +39,9 @@ function PatientsList() {
               </div>
               {patient.showDetails && (
                 <div className="patientDetails">
-                  <div>{getData("Description", patient.description, true)}</div>
+                  <div className="description">
+                    {getData("Description", patient.description, true)}
+                  </div>
                   <div>{getData("Website", patient.website, true)}</div>
                 </div>
               )}
@@ -50,14 +59,6 @@ function PatientsList() {
                   alt="chevron"
                 />
               </button>
-              {patient.showDetails && (
-                <button
-                  className="btnIcon"
-                  onClick={() => handleShowModalEdit(patient.id)}
-                >
-                  <img className="edit" src="/edit.png" alt="edit" />
-                </button>
-              )}
             </div>
           </div>
         );

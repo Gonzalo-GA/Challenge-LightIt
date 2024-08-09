@@ -1,33 +1,58 @@
 .patientCard {
-  display: flex;
+  @media (max-width: 600px){
+    width: 15rem;
+  }
+  display: inline-flex;
   border: 0.125rem solid;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  margin: 0 1rem 2rem 1rem;
+  width: 20rem;
+  height: fit-content;
+  position: relative;
+  align-self: start;
   .patientData {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    max-height: 6rem;
-    transition: max-height 2s ease-out;
-    overflow: hidden;
     .patientShortData {
       align-items: center;
       display: grid;
-      grid-template-columns: 0.75fr 1fr 2fr;
-      flex-grow: 1;
-      padding-left: 1rem;
+      padding: 0 1rem;
       .avatar {
-        width: 5rem;
-        height: 5rem;
-        margin: 0.5rem 0;
-        border-radius: 3rem;
+        width: 7rem;
+        height: 7rem;
+        margin: 1rem 0;
+        border-radius: 3.5rem;
+        justify-self: center;
       }
     }
     .patientDetails {
-      padding-left: 1rem;
+      padding: 0 1rem;
+
+      .description {
+        margin-bottom: 1rem;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+
+      .description::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      .description::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .description::-webkit-scrollbar-thumb {
+        background-color: black;
+        border-radius: 10px;
+      }
+
       .details {
         margin-bottom: 1rem;
       }
+
     }
     .label {
       color: #7f7f7f;
@@ -39,33 +64,35 @@
       font-weight: 600;
       font-size: 1rem;
       margin: 0;
+      margin-bottom: 1rem;
     }
-  }
-  .patientData.showingDetails {
-    max-height: 50rem;
   }
   .patientInteractives {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem;
-    .btnIcon {
-      background-color: transparent;
-      border: none;
-      padding: 0;
-      .chevron {
-        width: 2.5rem;
-        height: 2.5rem;
-        transform: rotate(180deg);
-        transition: transform 0.5s ease-out;
-      }
-      .chevron.showingDetails {
-        transform: rotate(0deg);
-      }
-      .edit {
-        width: 2rem;
-        height: 2rem;
-      }
-    }
+    justify-content: center;
+    border-top: 2px solid black;
+  }
+}
+
+.btnIcon {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  .chevron {
+    width: 2.5rem;
+    transform: rotate(180deg);
+    transition: transform 0.5s ease-out;
+    display: flex;
+    margin: auto;
+  }
+  .chevron.showingDetails {
+    transform: rotate(0deg);
+  }
+  .edit {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
   }
 }
