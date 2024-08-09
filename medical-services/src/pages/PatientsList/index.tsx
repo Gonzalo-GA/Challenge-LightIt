@@ -25,18 +25,15 @@ function PatientsList() {
             }`}
             key={patient.id}
           >
-            <button
-              className="btnIcon"
-              onClick={() => handleShowModalEdit(patient.id)}
-            >
-              <img className="edit" src="/edit.png" alt="edit" />
-            </button>
+            {getEditIcon(patient.id)}
             <div className="patientData">
+              {/* Patient Main Data */}
               <div className="patientShortData">
                 <img className="avatar" src={patient.avatar} alt="avatar" />
                 {getData("Name", patient.name, false)}
                 {getData("Creation Date", formatDate(patient.createdAt), false)}
               </div>
+              {/* Patient Detailed Data */}
               {patient.showDetails && (
                 <div className="patientDetails">
                   <div className="description">
@@ -46,7 +43,7 @@ function PatientsList() {
                 </div>
               )}
             </div>
-            <div className="patientInteractives">
+            <div className="collapsable">
               <button
                 className="btnIcon"
                 onClick={() => handleShowDetails(patient.id)}
@@ -72,6 +69,17 @@ function PatientsList() {
         <p className="label">{label}:</p>
         <p className="data">{data}</p>
       </div>
+    );
+  }
+
+  function getEditIcon(patientId: number) {
+    return (
+      <button
+        className="btnIcon"
+        onClick={() => handleShowModalEdit(patientId)}
+      >
+        <img className="edit" src="/edit.png" alt="edit" />
+      </button>
     );
   }
 

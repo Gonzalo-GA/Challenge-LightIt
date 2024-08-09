@@ -42,7 +42,7 @@ function Modal() {
       .matches(URL_VALIDATION_REGEX, "Invalid URL"),
   });
 
-  if (!showModal) return <React.Fragment></React.Fragment>;
+  if (!showModal) return <React.Fragment />;
 
   return (
     <div className="modalOverlay" onClick={onClose}>
@@ -159,6 +159,7 @@ function Modal() {
         })
       );
     }
+
     if (showModalEdit && patientToEdit) {
       dispatch(
         editPatient({
@@ -172,6 +173,7 @@ function Modal() {
         })
       );
     }
+
     onClose();
     toast.success(
       showModalEdit

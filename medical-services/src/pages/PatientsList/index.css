@@ -2,25 +2,28 @@
   @media (max-width: 600px){
     width: 15rem;
   }
-  display: inline-flex;
+  align-self: start;
   border: 0.125rem solid;
   border-radius: 0.5rem;
+  display: inline-flex;
   flex-direction: column;
-  margin: 0 1rem 2rem 1rem;
-  width: 20rem;
   height: 18.75rem;
-  position: relative;
-  align-self: start;
-  transition: height 0.5s ease;
+  margin: 0 1rem 2rem 1rem;
   overflow: hidden;
+  position: relative;
+  transition: height 0.5s ease;
+  width: 20rem;
+
   .patientData {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+
     .patientShortData {
       align-items: center;
       display: grid;
       padding: 0 1rem;
+
       .avatar {
         width: 7rem;
         height: 7rem;
@@ -29,6 +32,7 @@
         justify-self: center;
       }
     }
+
     .patientDetails {
       padding: 0 1rem;
 
@@ -56,12 +60,14 @@
       }
 
     }
+
     .label {
       color: #7f7f7f;
       font-weight: 500;
       font-size: 0.875rem;
       margin: 0;
     }
+
     .data {
       font-weight: 600;
       font-size: 1rem;
@@ -69,7 +75,8 @@
       margin-bottom: 1rem;
     }
   }
-  .patientInteractives {
+
+  .collapsable {
     display: flex;
     justify-content: center;
     border-top: 2px solid black;
@@ -80,6 +87,7 @@
   background-color: transparent;
   border: none;
   padding: 0;
+
   .chevron {
     width: 2.5rem;
     transform: rotate(180deg);
@@ -87,9 +95,11 @@
     display: flex;
     margin: auto;
   }
+
   .chevron.showingDetails {
     transform: rotate(0deg);
   }
+
   .edit {
     width: 1.5rem;
     height: 1.5rem;
@@ -98,6 +108,7 @@
     top: 0.5rem;
   }
 }
+
 .patientCard.showingDetails{
   height: 35.625rem;
 }

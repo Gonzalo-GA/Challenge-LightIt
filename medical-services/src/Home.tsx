@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "./store";
 import { useSelector } from "react-redux";
 import {
+  API_URL,
   fetchPatientData,
   showModalAdd,
 } from "./features/patientsList/patientsListSlice";
@@ -18,9 +19,7 @@ function Home() {
 
   //Fetches all the patients
   useEffect(() => {
-    dispatch(
-      fetchPatientData("https://63bedcf7f5cfc0949b634fc8.mockapi.io/users")
-    );
+    dispatch(fetchPatientData(API_URL));
   }, [dispatch]);
 
   return (
@@ -38,7 +37,7 @@ function Home() {
           </button>
         </div>
         {fetching ? (
-          getFetching()
+          getLoader()
         ) : (
           <div className="cardsWrapper">
             <PatientsList />
@@ -52,7 +51,7 @@ function Home() {
     </div>
   );
 
-  function getFetching() {
+  function getLoader() {
     return (
       <div className="loaderContainer">
         <div className="loader" />
