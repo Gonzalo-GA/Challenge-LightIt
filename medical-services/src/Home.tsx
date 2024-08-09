@@ -45,14 +45,19 @@ function Home() {
           </div>
         )}
         {/* TODO: Si se puede hacer pantalla de error mejor
-          EL TAL JHON DOE OJITO CON VALIDACIONES */}
+          EL TAL JHON DOE OJITO CON VALIDACIONES 
+          No se llego a estos TODOs y otras cosas, lo siento*/}
         <Modal />
       </section>
     </div>
   );
 
   function getFetching() {
-    return <p>Loading...</p>;
+    return (
+      <div className="loaderContainer">
+        <div className="loader" />
+      </div>
+    );
   }
 
   function handleShowModalAdd() {

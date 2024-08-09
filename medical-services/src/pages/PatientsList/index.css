@@ -8,9 +8,11 @@
   flex-direction: column;
   margin: 0 1rem 2rem 1rem;
   width: 20rem;
-  height: fit-content;
+  height: 18.75rem;
   position: relative;
   align-self: start;
+  transition: height 0.5s ease;
+  overflow: hidden;
   .patientData {
     display: flex;
     flex-direction: column;
@@ -95,4 +97,7 @@
     right: 0.5rem;
     top: 0.5rem;
   }
+}
+.patientCard.showingDetails{
+  height: 35.625rem;
 }
